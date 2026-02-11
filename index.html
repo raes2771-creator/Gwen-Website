@@ -1,0 +1,58 @@
+<!-- I want to make a page that randomises what kind of Gwen you are that day. 
+ 
+Will need to make the HTML to make the website, and CSS to create the widget-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Gwen are you Today</title>
+    <style>
+        body {
+            background-color: skyblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0
+        }
+        .centred {
+            text-align: center;
+        }
+        .button {
+            background-color:blue;
+            border:none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            display:inline-block;
+            font-size: 16px;
+            margin: 16px 0;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 class="centred"> Which Gwen are you?</h1>
+    <p class="centred"> Press the Button to find out below</p>
+    <button class="button" id="generateButton">Click Me!</button>
+
+    <script>
+        //This is where the JavaScript happens - This is defining an array of words
+        const words = ["Racist Gwen", "Stressed Gwen", "Evil Gwen", "Normal Gwen", "Trans Gwen", "Steve", "Badass Gwen", "Funny Gwen", "Sexy Gwen", "Tired Gwen", "Red Pilled Gwen", "Podcaster Gwen", "'I Promise I'm not on the list' Gwen","Joe Hendry Gwen", "Tory Gwen", "Twitch Streamer Gwen", "E-Girl Gwen", "Normal Gwen", "The Gwen that shall not be named", "Wizard Gwen"];
+
+        const generateButton = document.getElementById("generateButton")
+
+        function generateRandomWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            const randomWord = words[randomIndex];
+            document.querySelector("p").textContent = `${randomWord}`; 
+            }
+
+            generateButton.addEventListener("click", generateRandomWord);
+    </script>
+</body>
+</html>
