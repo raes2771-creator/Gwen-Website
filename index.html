@@ -1,7 +1,3 @@
-<!-- I want to make a page that randomises what kind of Gwen you are that day. 
- 
-Will need to make the HTML to make the website, and CSS to create the widget-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,28 +27,36 @@ Will need to make the HTML to make the website, and CSS to create the widget-->
             font-size: 16px;
             margin: 16px 0;
             cursor: pointer;
-            
+        }
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            color: darkblue;
+            margin-top: 20px;
+            min-height: 30px;
         }
     </style>
 </head>
 <body>
-    <h1 class="centred"> Which Gwen are you?</h1>
-    <p class="centred"> Press the Button to find out below</p>
+    <h1 class="centred">Which Gwen are you?</h1>
+    <p class="centred">Press the Button to find out below</p>
     <button class="button" id="generateButton">Click Me!</button>
+    <div id="result"></div>
 
     <script>
         //This is where the JavaScript happens - This is defining an array of words
-        const words = ["Great Answer Gwen", "Chungus Gwen", "General Gwenezar", "You just made the Gwist", "Racist Gwen", "Stressed Gwen", "Evil Gwen", "Normal Gwen", "Trans Gwen", "Steve", "Badass Gwen", "Funny Gwen", "Sexy Gwen", "Tired Gwen", "Red Pilled Gwen", "Podcaster Gwen", "I Promise I'm not on the list Gwen", "Joe Hendry Gwen", "Tory Gwen", "Twitch Streamer Gwen", "E-Girl Gwen", "Normal Gwen", "The Gwen that shall not be named", "Wizard Gwen", "Woke Gwen", "Main Character Gwen", "When will my life go back to normal Gwen", "Dragon Clan Gwen", "Gwen Stefani", "Illuminati Gwen", "Fanfic Gwen (she's a shell of the person she usually is)", "This isn't actually code, Rae has me, Gwen, trapped in here generating dumb words, please help me escape", "If you are Andrew and reading this, you must give Rae inspiration Gwen", "Sleepy Gwen", "27, no prospects, burden to parents and Frightened Gwen", "Stunned Gwen", "Tun Tun Tun Tun Gwen Sahur", "DuDuDuDu Gwen Verstappen", "Delusional Ferrari Fan Gwen", "Depressed Gwen", "We are Charlie Kirk Gwen", "Liberal Gwen", "Spider Gwen", "I've typed Gwen so many times in this code I'm unsure whether its a real name Gwen", "MAGA Gwen", "Twitch Streamer Gwen", "Reddit Mod Gwen", "Discord Kitten Gwen" ]];
+        const words = ["Great Answer Gwen", "Chungus Gwen", "General Gwenezar", "You just made the Gwist", "Racist Gwen", "Stressed Gwen", "Evil Gwen", "Normal Gwen", "Trans Gwen", "Steve", "Badass Gwen", "Funny Gwen", "Sexy Gwen", "Tired Gwen", "Red Pilled Gwen", "Podcaster Gwen", "I Promise I'm not on the list Gwen", "Joe Hendry Gwen", "Tory Gwen", "Twitch Streamer Gwen", "E-Girl Gwen", "Normal Gwen", "The Gwen that shall not be named", "Wizard Gwen", "Woke Gwen", "Main Character Gwen", "When will my life go back to normal Gwen", "Dragon Clan Gwen", "Gwen Stefani", "Illuminati Gwen", "Fanfic Gwen (she's a shell of the person she usually is)", "This isn't actually code, Rae has me, Gwen, trapped in here generating dumb words, please help me escape", "If you are Andrew and reading this, you must give Rae inspiration Gwen", "Sleepy Gwen", "27, no prospects, burden to parents and Frightened Gwen", "Stunned Gwen", "Tun Tun Tun Tun Gwen Sahur", "DuDuDuDu Gwen Verstappen", "Delusional Ferrari Fan Gwen", "Depressed Gwen", "We are Charlie Kirk Gwen", "Liberal Gwen", "Spider Gwen", "I've typed Gwen so many times in this code I'm unsure whether its a real name Gwen", "MAGA Gwen", "Twitch Streamer Gwen", "Reddit Mod Gwen", "Discord Kitten Gwen"];
 
-        const generateButton = document.getElementById("generateButton")
+        const generateButton = document.getElementById("generateButton");
+        const resultDiv = document.getElementById("result");
 
         function generateRandomWord() {
             const randomIndex = Math.floor(Math.random() * words.length);
             const randomWord = words[randomIndex];
-            document.querySelector("p").textContent = `${randomWord}`; 
-            }
+            resultDiv.textContent = randomWord;
+        }
 
-            generateButton.addEventListener("click", generateRandomWord);
+        generateButton.addEventListener("click", generateRandomWord);
     </script>
 </body>
 </html>
